@@ -4,7 +4,7 @@ const Todoinput = () => {
     const [todo, setTodo] = useState('')
 
     return (<>
-    <h3>할일 등록</h3>
+    <h1>할일 등록</h1>
     </>)
 
 }
