@@ -1,5 +1,5 @@
-import { Link, Route, Routes } from "react-router-dom"
-import Counter from "./Counter"
+import { Link } from "react-router-dom"
+
 
 const Navigation = () => <nav>
     <ul>
