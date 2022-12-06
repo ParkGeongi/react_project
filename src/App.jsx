@@ -1,5 +1,6 @@
+import Home from "./common/containers/Home"
 
-import { Home } from "./containers"
+
 
 
 const App = () => {

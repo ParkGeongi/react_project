@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
-import {} from '../../store'
-import { deleteTodoAction, toggleTodoAction } from '../../store/todo.reducer'
-import './TodoList.css'
-const Todolist = () => {
+import {} from 'store/'
+import { deleteTodoAction, toggleTodoAction } from 'store/todo.reducer'
+
+import 'todos/styles/TodoList.css'
+const TodoList = () => {
     const todos = useSelector(state => state.todos)
     const dispatch = useDispatch()
     const toggleTodo = id => dispatch(toggleTodoAction(id))
@@ -38,4 +39,4 @@ const Todolist = () => {
 
     </>)
     }
-export default Todolist
+export default TodoList
