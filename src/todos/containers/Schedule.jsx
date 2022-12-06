@@ -1,5 +1,5 @@
-import TodoInput from "../components/TodoInput"
-import TodoList from "../components/TodoList"
+import TodoInput from "todos/components/TodoInput"
+import TodoList from "todos/components/TodoList"
 
 
 
