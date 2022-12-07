@@ -9,7 +9,7 @@ import{ signupApi } from '../api'
 const SignUp = () =>{
     
   const [inputs, setInputs] = useState({})
-  const {username, password, password_repeat} = inputs;
+  const {email, password, nickname} = inputs;
   
   const onChange = e =>{
     e.preventDefault()
@@ -19,9 +19,19 @@ const SignUp = () =>{
   
   const onClick = e =>{
     e.preventDefault()
-    const signupRequest = {username, password, password_repeat}
+    const signupRequest = {email, password, nickname}
     alert(`사용자 이름 : ${JSON.stringify(signupRequest)}`)
     signupApi(signupRequest)
+    .then((res)=>{
+      console.log(`Response is ${res}`)
+      localStorage.setItem('token', JSON.stringify(res.config.data)) // 임시 저장소 response 저장해놈
+
+    }) //success reponse는 내가 보낸 requset한거에 추가로 뭔가 있다 추가한게 장고가 보낸거라고 알고 있다
+    .catch((err)=>{
+      console.log(err)
+      alert('이메일와 비밀번호 다시 입력해주세요')
+    }) //fail
+    
   }
     
     
@@ -33,14 +43,14 @@ const SignUp = () =>{
     <div>Please fill in this form to create an account.</div>
     <hr></hr>
 
-    <label htmlFor="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter username" name="username"  onChange={onChange} required/>
+    <label htmlFor="text"><b>Email</b></label>
+    <input type="text" placeholder="Enter email" name="email"  onChange={onChange} required/>
 
     <label htmlFor="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password"  onChange={onChange} required/>
 
-    <label htmlFor="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="password_repeat"  onChange={onChange} required/>
+    <label htmlFor="nickname"><b>Nickname</b></label>
+    <input type="text" placeholder="nickname" name="nickname"  onChange={onChange} required/>
 
     <label>
       <input type="checkbox"  name="remember" style={{marginbottom:"15px"}}/> Remember me
@@ -49,7 +59,7 @@ const SignUp = () =>{
     <div>By creating an account you agree to our <a  href="home" style={{color:"dodgerblue"}}>Terms & Privacy</a>.</div>
 
     <div className="clearfix">
-      <button type="button" className="cancelbt">Cancel</button>
+      <br/>
       <button onClick={onClick}  className="signupbtn">Sign Up</button>
     </div>
   </div>

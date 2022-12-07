@@ -24,21 +24,17 @@ hr {
 /* Set a style for all buttons */
 .signupbtn {
     background-color: #04AA6D;
+    border: 1px solid rgb(250, 250, 250);
     color: white;
     padding: 10px 10px;
-    cursor: pointer
+    cursor: pointer;
+    
   }
 
 button:hover {
   opacity:1;
 }
 
-/* Extra styles for the cancel button */
-.cancelbt {
-  padding: 10px 20px;
-  background-color: #f44336;
-  cursor: pointer
-}
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {

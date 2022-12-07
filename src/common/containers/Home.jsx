@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom"
 import { SignUp,LoginForm } from "auth"
-import Schedule from "todos/containers/Schedule"
+
 import {Counter, Footer, Navigation} from "common"
+import { Schedule } from "todos"
 
 
 

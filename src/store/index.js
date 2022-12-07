@@ -1,4 +1,7 @@
-import { createStore } from 'redux'
-import todoReducer from './todo.reducer'
-export const store = createStore(todoReducer)
+import { combineReducers} from "@reduxjs/toolkit"
+import todoReducer from "todos/reducers/todo.reducer"
+
+export default combineReducers({
+    todos: todoReducer
+})
     
