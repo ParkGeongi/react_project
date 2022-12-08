@@ -3,7 +3,7 @@ import { SignUp,LoginForm } from "auth"
 
 import {Counter, Footer, Navigation} from "common"
 import { Schedule } from "todos"
-
+import dog from '../../images/dog.png'
 
 
 const Home = () => {
@@ -12,7 +12,9 @@ const Home = () => {
         <thead>
             <tr columns="3" >
                 <td style={{ width: "100%", border: "1px solid black"}}>
+                <img src = {dog} alt = 'dog'></img>
                 <h3><Navigation/></h3>
+                
                     </td>
             </tr>
         </thead>
@@ -31,6 +33,7 @@ const Home = () => {
         <tr style={{ width: "100%", height: "20%", border: "1px solid black"}}>
             <td style={{ width: "100%", border: "1px solid black"}}>
                 <Footer/> 
+                
             </td>
         </tr>
         </tbody>

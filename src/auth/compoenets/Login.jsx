@@ -18,7 +18,7 @@ const Login = () => {
     alert(`사용자 이름 : ${JSON.stringify(loginRequest)}`)
     UserLogin(loginRequest)
     .then((res)=>{
-      console.log(`Response is ${res.config.data}`)
+      console.log(`Response is ${res}`)
       localStorage.setItem('token', JSON.stringify(res.config.data)) // 임시 저장소 response 저장해놈
 
     }) //success reponse는 내가 보낸 requset한거에 추가로 뭔가 있다 추가한게 장고가 보낸거라고 알고 있다
@@ -33,7 +33,7 @@ const Login = () => {
   return(<>
     <h2>Login Form</h2>
 
-  
+  <form action="auth/action_page.php" method="post">
   <div className="imgcontainer">
   <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" className="avatar" ></img>
   </div>
@@ -44,9 +44,9 @@ const Login = () => {
 
     <label htmlFor="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password"  onChange={onChange} required/>
-    <input type="checkbox" name="remember"/> Remember me
+    <input type="checkbox" name="remember"/> Remember me<br/>
     <br/>
-    <br/>
+    
     <button onClick={onClick}  className="Loginbtn">Login</button>
     
     
@@ -56,6 +56,7 @@ const Login = () => {
     
     <span className="psw"><a href="home"> Forgot password?</a></span>
   
+</form>
 
 
     </>)
